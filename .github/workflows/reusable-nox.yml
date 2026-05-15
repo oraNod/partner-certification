@@ -13,6 +13,9 @@ jobs:
         include:
           - session: spelling
             python-versions: "3.12"
+          - session: commitlint
+            python-versions: "3.12"
+            fetch-depth: 0
           - session: build
             python-versions: "3.12"
     name: "Run nox ${{ matrix.session }} session"
@@ -20,6 +23,7 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v6
         with:
+          fetch-depth: ${{ matrix.fetch-depth || 1 }}
           persist-credentials: false
       - name: Setup nox
         uses: wntrblm/nox@2026.04.10

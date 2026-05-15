@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import nox
 
+nox.options.sessions = ("spelling", "build")
+
 
 @nox.session
 def spelling(session: nox.Session):
@@ -14,6 +16,18 @@ def spelling(session: nox.Session):
         "docs",
         *session.posargs,
     )
+
+
+@nox.session
+def commitlint(session: nox.Session):
+    """
+    Check commit messages against conventional commits format.
+    This session requires git history and is intended for CI only.
+    """
+    session.install(
+        "-r", "requirements/commitlint.in", "-c", "requirements/commitlint.txt"
+    )
+    session.run("cz", "check", "--rev-range", "origin/main..HEAD", *session.posargs)
 
 
 @nox.session
