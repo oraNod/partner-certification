@@ -35,7 +35,9 @@ def build(session: nox.Session):
     """
     Build the docsite with mkdocs
     """
-    session.install("-r", "requirements/requirements.in", "-c", "requirements/requirements.txt")
+    session.install(
+        "-r", "requirements/requirements.in", "-c", "requirements/requirements.txt"
+    )
     session.run(
         "mkdocs",
         "build",
