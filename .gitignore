@@ -1,2 +1,22 @@
-.vscode
+# LLMs
+.claude/
+
+# Editors
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+.nox/
+.venv/
+venv/
+
+# mkdocs
 site/
