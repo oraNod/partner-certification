@@ -1,0 +1,6 @@
+# This constraints file contains pins for stable, tested doc builds.
+# This constraint file also pins other versions for which there are known limitations.
+
+mkdocs-ansible<27.0
+pillow>=12.2.0 # https://github.com/advisories/GHSA-pwv6-vv43-88gr
+urllib3>=2.7.0 # https://github.com/advisories/GHSA-mf9v-mfxr-j63j

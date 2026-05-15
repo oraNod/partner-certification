@@ -1,0 +1,9 @@
+# This requirements file is used for doc builds
+
+-c constraints.in
+
+
+# Base set of dependencies.
+
+mkdocs
+mkdocs-ansible

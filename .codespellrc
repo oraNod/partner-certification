@@ -1,0 +1,8 @@
+[codespell]
+skip = site,*.inv,.nox,venv,.git
+count =
+check-filenames = true
+quiet-level = 3
+ignore-words = .codespellignorewords
+exclude-file = .codespellignorelines
+builtin = clear,code,en-GB_to_en-US,informal,names,rare
