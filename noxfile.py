@@ -19,6 +19,17 @@ def spelling(session: nox.Session):
 
 
 @nox.session
+def formatters_check(session: nox.Session):
+    """
+    Check Python file formatting without making changes
+    """
+    session.install(
+        "-r", "requirements/formatters.in", "-c", "requirements/formatters.txt"
+    )
+    session.run("black", "--check", *session.posargs, "noxfile.py")
+
+
+@nox.session
 def commitlint(session: nox.Session):
     """
     Check commit messages against conventional commits format.
